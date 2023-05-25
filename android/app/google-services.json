@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1059713087223",
+    "project_id": "food-delivery-cook",
+    "storage_bucket": "food-delivery-cook.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059713087223:android:7353a93e15506a0fb505f2",
+        "android_client_info": {
+          "package_name": "com.example.food_delivery_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059713087223-eo26unlt8eucnto3ek1ben5it7qsp5g7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCosTwSr59a8rF8Fu_keHB3MqKDm0VXbaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059713087223-eo26unlt8eucnto3ek1ben5it7qsp5g7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
