@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        home: MainScreenController(),
+        home: HomeScreen(),
         routes: {
           '/login-screen': (context) => const LoginScreen(),
           '/register-screen': (context) => const RegisterScreen(),

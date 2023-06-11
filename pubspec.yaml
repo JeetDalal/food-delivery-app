@@ -39,10 +39,10 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   flutter_animate: ^4.1.1+1
   google_sign_in: ^6.1.0
-  firebase_auth: ^4.6.1
-  firebase_core: ^2.13.0
+  firebase_auth: ^4.6.2
+  firebase_core: ^2.13.1
   firebase_storage: ^11.2.1
-  cloud_firestore: ^4.7.1
+  cloud_firestore: ^4.8.0
   provider: ^6.0.5
   geolocator: ^9.0.2
   geocoding: ^2.1.0
@@ -78,6 +78,14 @@ flutter:
     - images/google.png
     - images/fb.png
     - images/location.png
+    - images/thali.png
+    - images/burger.png
+    - images/pizza.png
+    - images/chinese.png
+    - images/sweets.png
+    - images/biryani.png
+    - images/drinks.png
+    - images/icecream.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
