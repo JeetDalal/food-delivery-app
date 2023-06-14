@@ -4,6 +4,7 @@ import 'package:food_delivery_app/utils/utils.dart';
 import 'package:provider/provider.dart';
 
 import '../utils/header.dart';
+import '../utils/restaurant_card.dart';
 import '../utils/top_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: [
             const TopBar(),
             const SizedBox(
@@ -66,7 +67,16 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const Header(title: 'ALL RESTAURANTS')
+            const Header(title: 'ALL RESTAURANTS'),
+            const SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              child: RestaurantCard(),
+            ),
           ],
         ),
       ),
