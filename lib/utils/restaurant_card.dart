@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class RestaurantCard extends StatelessWidget {
+  final String name;
+  final String type;
+  final String imageUrl;
   const RestaurantCard({
+    required this.imageUrl,
+    required this.name,
+    required this.type,
     super.key,
   });
 
@@ -27,14 +33,13 @@ class RestaurantCard extends StatelessWidget {
           Expanded(
               flex: 2,
               child: Container(
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20)),
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                        'https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'),
+                    image: NetworkImage(imageUrl),
                   ),
                 ),
               )),
@@ -51,7 +56,7 @@ class RestaurantCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Domino\'s Pizza',
+                          name,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 22,
@@ -86,7 +91,7 @@ class RestaurantCard extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Fast Food',
+                          type,
                           style: TextStyle(
                             color: Colors.grey,
                           ),

@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/services/location_service.dart';
 import 'package:food_delivery_app/utils/utils.dart';
@@ -75,7 +78,51 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: 10,
               ),
-              child: RestaurantCard(),
+              child: StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('company')
+                      .snapshots(),
+                  builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if (snapshot.hasData) {
+                      final data = snapshot.data?.docs;
+                      log(data![0].toString());
+                      log(data.toString());
+                      return Expanded(
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: data.length,
+                          itemBuilder: (context, index) {
+                            final perData = data[index];
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 5,
+                                vertical: 10,
+                              ),
+                              child: GestureDetector(
+                                onTap: () {
+                                  final companyId = perData.id;
+                                  Navigator.of(context).pushNamed(
+                                      '/menu-screen',
+                                      arguments: companyId);
+                                },
+                                child: RestaurantCard(
+                                  imageUrl: (perData['brandImages'].toList()[0]
+                                      as Map<String, dynamic>)['imageUrl'],
+                                  name: perData['companyName'],
+                                  type: perData['foodStyle'],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      );
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                  }),
             ),
           ],
         ),

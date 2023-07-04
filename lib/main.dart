@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/screens/address.dart';
 import 'package:food_delivery_app/screens/login.dart';
 import 'package:food_delivery_app/screens/main_screen.dart';
+import 'package:food_delivery_app/screens/menu.dart';
 import 'package:food_delivery_app/services/auth_service.dart';
 import 'package:food_delivery_app/services/location_service.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
           '/register-screen': (context) => const RegisterScreen(),
           '/address-screen': (context) => const Address(),
           '/home-screen': (context) => const HomeScreen(),
+          '/menu-screen': (context) => const RestaurantMenuScreen(),
         },
       ),
     );
