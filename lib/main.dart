@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/providers/cart_provider.dart';
 import 'package:food_delivery_app/screens/address.dart';
 import 'package:food_delivery_app/screens/login.dart';
 import 'package:food_delivery_app/screens/main_screen.dart';
@@ -31,7 +32,10 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => LocationServices(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CartProvider(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
